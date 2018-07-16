@@ -18,4 +18,3 @@ class Norman(models.Model):
     age = models.IntegerField()
     sex = models.BooleanField()
     phone_number = models.DecimalField(max_digits=10,decimal_places=0)
-    

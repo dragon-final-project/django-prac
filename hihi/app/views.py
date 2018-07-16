@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import ListView
+from django.http import HttpResponse
 from .models import Person
 
 # Create your views here.
@@ -25,3 +26,15 @@ def NormanPage(request):
         'Detail': 'Cool'
     }
     return render(request, 'NormanPage.html', context=my_dict)
+
+
+def uploadFile(request):
+    if request.method == 'POST':
+        data = request.FILES['image_file']
+
+        with open('static/save_img/' + str(data), 'wb') as jpg_f:
+            for chunk in data.chunks():
+                jpg_f.write(chunk)
+        return HttpResponse('<div>Upload Success!!</div><img src="/static/save_img/' + str(data) + '" />')
+    else:
+        return render(request, 'upload.html')

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HIHI Upload</title>
+	</head>
+	<body>
+		<form id="uploadForm" enctype="multipart/form-data" method="post" action="">
+			{% csrf_token %}
+		     <input type="file" name="image_file" id="imageFile" />
+			 <input type="submit">
+		</form>
+	</body>
+</html>
