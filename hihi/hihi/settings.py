@@ -81,6 +81,15 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+    # 'default': {
+    #     'NAME': 'project',
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'USER': 'root',
+    #     'PASSWORD': 'smalldragon487',
+    #
+    #     'HOST': 'www.bc-newlife.com.tw',
+    #     'PORT': '3306'
+    # }
 }
 
 
