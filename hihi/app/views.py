@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic import ListView
 from django.http import HttpResponse
-from .models import Person, UploadPic
+from .models import UploadPic
 
 def NormanPage(request):
     my_dict = {
@@ -27,5 +27,10 @@ def uploadFile(request):
         return HttpResponse('<div>Upload Success!!</div><img src="/static/save_img/' + str(data) + '" />')
     else:
         return render(request, 'upload.html')
+
+class PicListView(ListView):
+    model = UploadPic
+    template_name = 'pic_list.html'
+    context_object_name = 'pics'
 
 # 3 4 1 0 5 17

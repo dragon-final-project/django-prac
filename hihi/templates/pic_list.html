@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PIC</title>
+  </head>
+  <body>
+
+    <ul>
+    {% for pic in pics %}
+        <li>{{ pic.id }} - {{ pic.pic_name }} - {{ pic.uploaded_at }}</li>
+        <li><a href="/static/save_img/{{pic.pic_name}}">Click me</a></li>
+        <!-- <img src="/static/save_img/{{pic.pic_name}}"> -->
+    {% endfor %}
+    </ul>
+
+  </body>
+</html>
